@@ -3,19 +3,18 @@
 
 def main():
     """Runs program from command line."""
-    pig_latin()
+    user_text = list(input("Please enter a word or phrase to conver to pig latin:\n").split())
+    pig_latin_text = ''
+    for word in user_text:
+        pig_latin_text += pig_latin(word) + ' '
 
-def pig_latin():
-    user_string = input("Please enter text to convert to pig latin:\n").lower()
-    pig_latin_string = ""
-    vowels = 'aeiouy'
-    for word in user_string:
-        if word[0] in vowels:
-            pig_latin_string += word + 'way' + ' '
-        else:
-            pig_latin_string += word[1:] + word[0] + 'ay' + ' '
+    print(pig_latin_text)
 
-    print(pig_latin_string)
+def pig_latin(word):
+    if word[0] in 'aeiou':
+        return f'{word}way'
+    else:
+        return f'{word[1:]}{word[0]}ay'
 
 if __name__ == '__main__':
     main()
