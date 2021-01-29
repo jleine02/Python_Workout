@@ -16,6 +16,11 @@ def convert_to_piglatin(text):
     return pig_latin_text
 
 def pig_latin(word):
+    # Need to refactor each use case into separate functions to test
+    # TODO: Check for punctuation (multiple punctuation e.g. '!!!')
+    # TODO: Check for capitalization
+    # TODO: Transform
+
     if word[0] in 'aeiou':
         return f'{word}way'
     else:
