@@ -7,24 +7,33 @@ def main():
     pig_latin_text = convert_to_piglatin(user_text)
     print(pig_latin_text)
 
-def convert_to_piglatin(text):
-    """Coverts list of strings to pig latin."""
+def convert_to_piglatin(user_text):
+    """Converts list of strings to pig latin."""
     pig_latin_text = ''
-    for word in text:
+    for word in user_text:
         pig_latin_text += pig_latin(word) + ' '
 
     return pig_latin_text
 
 def pig_latin(word):
-    # Need to refactor each use case into separate functions to test
-    # TODO: Check for punctuation (multiple punctuation e.g. '!!!')
-    # TODO: Check for capitalization
-    # TODO: Transform
-
+    """Transforms word to pig latin covering all edge cases."""
+    # Check for punctuation (multiple punctuation e.g. '!!!')
+    punctuation = ''
+    while word[-1] in ',.!?:;':
+        punctuation += word[-1]
+        word = word[:-1]
+    # Check for capitalization
+    word_capitalized = word[0] == word[0].upper()
+    # Transform
     if word[0] in 'aeiou':
-        return f'{word}way'
+        if word_capitalized:
+            return (word + 'way' + punctuation).title()
+        else:
+            return f'{word}way{punctuation}'
     else:
-        return f'{word[1:]}{word[0]}ay'
+        if word_capitalized:
+            return (word[1:] + word[0] + 'ay' + punctuation).title()
+        return f'{word[1:]}{word[0]}ay{punctuation}'
 
 if __name__ == '__main__':
     main()
