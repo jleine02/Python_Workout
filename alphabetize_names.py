@@ -16,6 +16,7 @@ def main():
     print(alphabetize_names(PEOPLE))
 
 def alphabetize_names(list_of_dicts):
+    """Sorts list based off of last and first name keys."""
     return sorted(list_of_dicts,
         key=operator.itemgetter('last', 'first'))
 
