@@ -10,7 +10,7 @@ def restaurant(menu):
     """Asks user what they would like off the menu parameter and keeps track of their total."""
     currentSum = 0
     while(True):
-        choice = input("Order: ")
+        choice = input("Order: ").strip()
         if choice:
             if choice in menu:
                 currentSum += menu[choice]
