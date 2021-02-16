@@ -11,7 +11,7 @@ def main():
 def restaurant(menu):
     """Asks user what they would like off the menu parameter and keeps track of their total."""
     current_total = 0
-    while (True):
+    while True:
         choice = input("Order: ").strip()
         if choice:
             if choice in menu:
