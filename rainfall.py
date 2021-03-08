@@ -10,6 +10,8 @@ def main():
 
 
 def get_rainfall():
+    """User input provides city names and rainfall amounts.  Totals are printed to stdout once a blank city name is
+    entered."""
     rain_fall = OrderedDict()
 
     while True:
