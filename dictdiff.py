@@ -1,8 +1,6 @@
 #! usr/bin/env python3
 """dictdiff.py - Compares to dictionaries and prints the differences to stdout."""
 
-from sys import argv
-
 
 def main():
     d1 = {'a': 1, 'b': 2, 'c': 3}
