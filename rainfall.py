@@ -15,8 +15,12 @@ def get_rainfall():
     while True:
         city_name = input("Enter city name: ")
         if city_name:
-            rain_amount = input("Enter rain amount in mm: ")
-            rain_fall[city_name] = rain_fall.get(city_name, 0) + int(rain_amount)
+            try:
+                rain_amount = int(input("Enter rain amount in mm: "))
+            except ValueError:
+                print('Please enter a valid integer amount of rainfall; try again!')
+                continue
+            rain_fall[city_name] = rain_fall.get(city_name, 0) + rain_amount
         else:
             break
 
