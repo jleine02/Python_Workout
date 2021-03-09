@@ -12,7 +12,11 @@ def main():
     print(f'''The difference between {d3} and {d4} is:\n{dictdiff(d3, d4)}\n''')
 
     d5 = {'a': 1, 'b': 2, 'd': 4}
-    print(f'''The difference between {d1} and {d5} is:\n{dictdiff(d1, d5)}''')
+    print(f'''The difference between {d1} and {d5} is:\n{dictdiff(d1, d5)}\n''')
+
+    print(f'd1 and d3 merged is : {dictupdate(d1, d3)}\n')
+
+    print(f'd1, d2, and d3 merged is : {dictupdate(d1, d2, d3)}')
 
 
 def dictdiff(dict_one, dict_two):
@@ -24,6 +28,13 @@ def dictdiff(dict_one, dict_two):
         if dict_one.get(key) != dict_two.get(key):
             output[key] = [dict_one.get(key), dict_two.get(key)]
 
+    return output
+
+def dictupdate(*args):
+    """Merges multiple dictionaries into a single dictionary"""
+    output = {}
+    for dict in args:
+        output.update(dict)
     return output
 
 
