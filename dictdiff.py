@@ -19,7 +19,7 @@ def main():
     print(f'd1, d2, and d3 merged is : {dictupdate(d1, d2, d3)}')
 
     list_to_dict = [1, 'a', 2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 'f', 7, 'g']
-    new_dict = dict_partition(1, 'a', 2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 'f', 7, 'g')
+    new_dict = create_dict(1, 'a', 2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 'f', 7, 'g')
     print(f'dict_part of {list_to_dict} is {new_dict}')
 
 
@@ -45,7 +45,7 @@ def dictupdate(*args):
     return output
 
 
-def dict_partition(*args):
+def create_dict(*args):
     """Even args are used as keys while odd args are used as values to create a new dictionary."""
     output = {}
     idx = 0
