@@ -16,7 +16,7 @@ def word_count(file_name):
               'lines': 0}
     unique_words = set()
 
-    with open('file_name', 'r') as file:
+    with open(file_name, 'r') as file:
         for line in file:
             counts['chars'] += len(line)
             counts['words'] += len(line.split())
