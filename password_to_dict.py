@@ -5,7 +5,7 @@ from sys import argv
 
 
 def main():
-    file_name = argv[2]
+    file_name = argv[1]
     with open(file_name, 'r') as infile:
         password_dict = password_to_dict(infile)
 
