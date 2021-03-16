@@ -5,10 +5,10 @@ from sys import argv
 
 def main():
     """Runs program from command line."""
-    word = longestword(argv[1])
+    word = longest_word(argv[1])
     print(word)
 
-def longestword(file):
+def longest_word(file):
     """Iterates over file object and returns longest string in all lines."""
     with open(file, 'r') as in_file:
         words = in_file.read().split() # opportunity to use a generator here?
