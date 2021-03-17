@@ -1,7 +1,6 @@
 #! usr/bin/env python3
 """longest_word.py - reads files and returns information on the longest words included in each."""
 import os
-from sys import argv
 
 
 def main():
